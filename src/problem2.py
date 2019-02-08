@@ -189,7 +189,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -197,9 +197,18 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
+    rect.attach_to(win)
 
+    for k in range(n - 1):
+        c1 = rg.Point(rect.get_lower_left_corner().x - (k + 1) * delta, rect.get_upper_right_corner().y - (k + 1)*delta)
+        c2 = rg.Point(rect.get_upper_right_corner().x + (k + 1) * delta, rect.get_lower_left_corner().y + (k + 1)*delta)
+        final = rg.Rectangle(c1, c2)
+        final.attach_to(win)
 
+    win.render(.5)
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+
 main()
