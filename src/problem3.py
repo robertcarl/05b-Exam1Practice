@@ -229,10 +229,10 @@ def problem3b(m, point1):
     window = rg.RoseWindow(400, 650)
     count = 0
     for k in range(m):
-        problem3a(window, point1, 3 + 2 * k)
+        problem3a(window, point1, 3 + (2 * k))
         window.render()
         point1.y = point1.y + 60
-        count = count + problem3a(window, point1, 3 + 2 * k)
+        count = count + problem3a(window, point1, 3 + (2 * k))
     window.close_on_mouse_click()
     return count
 # -----------------------------------------------------------------------------
